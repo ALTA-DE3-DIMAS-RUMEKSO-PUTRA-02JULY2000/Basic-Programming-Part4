@@ -1,7 +1,16 @@
 def mean_median(array_input):
-    mean = 1.0
-    median = 1
-    return (mean, median)
+    n = len(array_input)
+    
+    if n == 0:
+        return None
+    elif n % 2 == 0:
+        median = (array_input[n // 2] + array_input[n // 2 - 1]) / 2
+    else :
+        median = array_input[n // 2]
+
+    mean = sum(array_input) / n
+
+    return round(mean, 1), round(median, 1)
 
 if __name__ == '__main__':
     print(mean_median([1, 2, 3, 4])) # (2.5, 2.5)
