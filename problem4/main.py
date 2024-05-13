@@ -1,6 +1,18 @@
 def ubah_huruf(sentence):
-    pattern = ""
-    return pattern
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    shifted_alphabet = "KLMNOPQRSTUVWXYZABCDEFGHIJ"
+
+    encrypted_sentence = ""
+
+    for char in sentence:
+        if char.isalpha() and char.isupper():
+            index = alphabet.index(char)
+            encrypted_char = shifted_alphabet[index]
+            encrypted_sentence += encrypted_char
+        else:
+            encrypted_sentence += char
+
+    return encrypted_sentence
 
 if __name__ == '__main__':
     print(ubah_huruf("SEPULSA OKE")) # COZEVCK YUO
